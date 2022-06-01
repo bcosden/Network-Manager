@@ -58,7 +58,7 @@ az vm create -n westhubVM -g $westrg --image ubuntults --public-ip-sku Standard 
 echo '['$(date +"%T")'] Creating Virtual Machines: westspoke1VM'
 az vm create -n westspoke1VM -g $westrg --image ubuntults --public-ip-sku Standard --size Standard_D2S_v3 --subnet subnet1 --vnet-name westSpoke1 --authentication-type ssh --admin-username azureuser --ssh-key-values @~/.ssh/id_rsa.pub -o none --only-show-errors
 echo '['$(date +"%T")'] Creating Virtual Machines: westspoke2VM'
-az vm create -n westspoke2VM -g $westrg --image ubuntults --public-ip-sku Standard --size Standard_D2S_v3 --subnet subnet1 --vnet-name westSpoke1 --authentication-type ssh --admin-username azureuser --ssh-key-values @~/.ssh/id_rsa.pub -o none --only-show-errors
+az vm create -n westspoke2VM -g $westrg --image ubuntults --public-ip-sku Standard --size Standard_D2S_v3 --subnet subnet1 --vnet-name westSpoke2 --authentication-type ssh --admin-username azureuser --ssh-key-values @~/.ssh/id_rsa.pub -o none --only-show-errors
 
 # update NSGs to allow public access for port 22 on your IP only
 echo '['$(date +"%T")'] Updating NSG rule for public port 22 on easthubVM'
